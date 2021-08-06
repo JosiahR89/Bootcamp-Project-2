@@ -19,8 +19,8 @@ ETL, which stands for Extract, Transform, and Load, is the process to
 Raw data is extracted from various data sources, which can be structured or non structured. These sources can include but are not limited to:
 
 * APIs, JSON, CSV, XML files
-* SQL or NoSQL servers
-* CRM and ERP systems
+* RDBMS(MS SQl Server, MySql etc.) or NoSQL servers (MongoDB etc.)
+* CRM (Salesforce Sales Cloud, Quickbase etc.) and ERP systems(Katana, Oracle NetSuite etc)
 * Web pages
 
 #### Transform
