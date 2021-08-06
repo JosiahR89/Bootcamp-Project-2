@@ -1,11 +1,11 @@
-# Extract Transform Load - Project 2
+## Extract Transform Load - Project 2
 ![ETL](/Images/ETL_img.jpg)
 
 
 #### What is ETL?
-<p>We are living in a world of data. The volume of data that is being generated and collected continues to increase at an exponential rate.
+We are living in a world of data. The volume of data that is being generated and collected continues to increase at an exponential rate.
 As the amount of data grows, the importance of making use of that data grows as well. This data is immensely valuable for analytics, data science, and machine learning, not only to present valuable information and noticeable trends but also to derive business insights and predictions.
-The data that is being captured and stored cannot be used in its raw form. Processing the raw, messy data into clean, consistent and reliable data is a critical step before it can be used.</p>
+The data that is being captured and stored cannot be used in its raw form. Processing the raw, messy data into clean, consistent and reliable data is a critical step before it can be used.
 
 ETL, which stands for Extract, Transform, and Load, is the process to
 * Extract data from various sources 
@@ -13,7 +13,7 @@ ETL, which stands for Extract, Transform, and Load, is the process to
 * Load the data into target database systems that end-users can access and use for further analysis, to make business decisions and, to solve problems.
 
 ### How ETL works
-<p>Lets understand each step of the ETL process</p>
+Lets understand each step of the ETL process
 
 #### Extract
 Raw data is extracted from various data sources, which can be structured or non structured. These sources can include but are not limited to:
@@ -40,3 +40,6 @@ This phase can involve the following tasks:
 * Conducting tests/audits to ensure data quality and compliance.
 
 * Encrypting, or protecting data governed by industry standards or government regulations.
+
+#### Load
+This last step involves moving the transformed data to a target data warehouse. Initially, the final data is loaded once, and thereafter periodic loading of data happens to keep the database up to date. Most of the time the ETL process is automated and batch-driven. Typically, ETL is scheduled to trigger during off-hours when traffic on the source systems and the destination systems is at its lowest.
