@@ -24,18 +24,18 @@ Raw data is extracted from various data sources, which can be structured or non 
 * Web pages
 
 #### Transform
-The second step consists of transforming the raw data that has been extracted from the abouve mentioned sources into a format that can be used by different applications.
-This can be like a staging area where the data gets cleansed, mapped and transformed, often to a specific schema, so it meets operational requirements. 
+The second step consists of transforming the raw data that has been extracted from the above-mentioned sources into a format that can be used by different applications.
+This can be like a staging area where the data gets cleansed, mapped, and transformed, often to a specific schema, so it meets operational requirements. 
 
 This phase can involve the following tasks:
 
 * Filtering, handling null values, removing duplicates, validating, and normalizing the data.
 
-* Creating primary and foreign key relationships, applying referential integrety if using relational databases and redistributing clean data into the right tables.
+* Creating primary and foreign key relationships, applying referential integrity if using relational databases, and redistributing clean data into the right tables.
 
 * Formatting the data into tables or joined tables to match the schema of the target data systems.
 
-* Performing calculations or summarizations on the raw data. This can  include changing row and column headers for consistency, converting dates,  or other units of measurement, editing text strings, etc.
+* Performing calculations or summarizations on the raw data. This can include changing row and column headers for consistency, converting dates,  or other units of measurement, editing text strings, etc.
 
 * Conducting tests/audits to ensure data quality and compliance.
 
