@@ -44,7 +44,7 @@ This can be compared to a staging area where the data gets cleansed, mapped, and
     * <table><tr><td align="center"><img src="Images/ERD.jpg"></tr></td></table>
 * Filtering, handling null values, removing duplicates, validating, and normalizing the data.
 * Creating primary and foreign key relationships, applying referential integrity if using relational databases, and redistributing clean data into the right tables.
-    * All datasets that we sourced has county and/or state. So we decided to create seperate tables for each that act as primary tables.
+    * All datasets that we sourced had county and/or state. We create seperate tables for each that act as primary tables and all other tables can reference them with a foreign key.
 
 * Formatting the data into tables or joined tables to match the schema of the target data systems.
 * Performing calculations or summarizations on the raw data. This can include changing row and column headers for consistency, converting dates,  or other units of measurement, editing text strings, etc.
