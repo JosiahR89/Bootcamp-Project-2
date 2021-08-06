@@ -40,6 +40,7 @@ This can be compared to a staging area where the data gets cleansed, mapped, and
 
 This phase can involve the following tasks:
 * After studying the raw data and identifying the columns from each table, creating an Entity Relationship Diagram (ERD) to view a snap shot before rearranging data into required schema <br />
+
     * <table><tr><td align="center"><img src="Images/ERD.jpg"></tr></td></table>
 * Filtering, handling null values, removing duplicates, validating, and normalizing the data.
 * Creating primary and foreign key relationships, applying referential integrity if using relational databases, and redistributing clean data into the right tables.
