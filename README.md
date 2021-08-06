@@ -1,5 +1,5 @@
-## Extract Transform Load
-#### Project 2
+#### Project 2 ## Extract Transform Load
+
 ![ETL](/Images/ETL_img.jpg)
 
 
