@@ -26,7 +26,7 @@ Raw data is extracted from various data sources, which can be structured or non 
 * CRM (Salesforce Sales Cloud, Quickbase etc.) and ERP systems(Katana, Oracle NetSuite etc)
 * Web pages
 
-## 'Extract' - Our Project:
+## How we 'Extract'ed:
 **Data Sources :**
 * Census Data : https://www2.census.gov/programs-surveys/popest/datasets/2010-2020/counties/totals/
     * Downloaded 2102 Census Data in csv format
