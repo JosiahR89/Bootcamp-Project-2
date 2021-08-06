@@ -1,0 +1,39 @@
+US_States
+-
+State_Fips PK int
+Sabbr      char(2)
+Sname      varchar(356)
+
+US_Counties
+-
+County_Fips PK int
+County  varchar(356)
+State_Fips int FK >- US_States.State_Fips
+
+
+US_Covid_Cases
+-
+Case_ID Serial PK
+CDate date 
+County_Fips FK >- US_Counties.County_Fips
+No_Of_Cases
+No_Of_Deaths
+
+US_Population_2020_County
+-
+ID Serial PK 
+County_Fips int FK >- US_Counties.County_Fips
+Population bigint
+
+WHO_Flu_Data
+-
+Case_ID Serial PK
+State_Fips int FK >- US_States.State_Fips
+Year int 
+Week int
+Total_Specimens int
+Total_A int,
+Total_B int,
+Percent_Positive int
+Percent_A decimal
+Percent_B decimal
