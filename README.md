@@ -1,6 +1,6 @@
 #### Project 2 - **Extract Transform Load**
 
-![ETL](/Images/ETL_img.jpg)
+![ETL](/Images/ETL_img_sm.jpg)
 
 
 **What is ETL?** 
