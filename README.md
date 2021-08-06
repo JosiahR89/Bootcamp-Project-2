@@ -23,7 +23,7 @@ ETL, which stands for Extract, Transform, and Load, is the process to
 * CRM (Salesforce Sales Cloud, Quickbase etc.) and ERP systems(Katana, Oracle NetSuite etc)
 * Web pages
 
-**ransform** : The second step consists of transforming the raw data that has been extracted from the above-mentioned sources into a format that can be used by different applications.
+**Transform** : The second step consists of transforming the raw data that has been extracted from the above-mentioned sources into a format that can be used by different applications.
 This can be like a staging area where the data gets cleansed, mapped, and transformed, often to a specific schema, so it meets operational requirements. 
 
 This phase can involve the following tasks:
