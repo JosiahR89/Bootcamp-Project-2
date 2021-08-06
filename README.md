@@ -36,11 +36,11 @@ Raw data is extracted from various data sources, which can be structured or non 
     * Dowloaded Influenza Data in csv format
 
 **Transform** : The second step consists of transforming the raw data that has been extracted from the above-mentioned sources into a format that can be used by different applications.
-This can be like a staging area where the data gets cleansed, mapped, and transformed, often to a specific schema, so it meets operational requirements. 
+This can be compared to a staging area where the data gets cleansed, mapped, and transformed, often to a specific schema, so it meets operational requirements. 
 
 This phase can involve the following tasks:
-* After studying the raw data and identifying the columns from each table, Creating an Entity Relationship Diagram (ERD) to view a snap shot before rearranging data into required schema
-* <table><tr><td align="center"><img src="Images/ERD.jpg"></tr></td></table>
+* After studying the raw data and identifying the columns from each table, creating an Entity Relationship Diagram (ERD) to view a snap shot before rearranging data into required schema
+    * <table><tr><td align="center"><img src="Images/ERD.jpg"></tr></td></table>
 * Filtering, handling null values, removing duplicates, validating, and normalizing the data.
 * Creating primary and foreign key relationships, applying referential integrity if using relational databases, and redistributing clean data into the right tables.
 * Formatting the data into tables or joined tables to match the schema of the target data systems.
