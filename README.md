@@ -53,7 +53,9 @@ This can be compared to a staging area where the data gets cleansed, mapped, and
 
 **Load** : This last step involves moving the transformed data to a target data warehouse. Initially, the final data is loaded once, and thereafter periodic loading of data happens to keep the database up to date. Most of the time the ETL process is automated and batch-driven. Typically, ETL is scheduled to trigger during off-hours when traffic on the source systems and the destination systems is at its lowest.
 
+-----------------------------------------------------------------------------------------------------
 **Examples of How our data can be used**:
-Analysis -- Reports (showing covid cases vs flu)
+Analysis -- Reports (showing covid cases vs flu) 
+<br />
 Visualizations -- US Map displaying covid active cases 
 
