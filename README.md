@@ -2,8 +2,6 @@
 
 <table><tr><td align="center"><img src="Images/ETL_img_sm.jpg" width="64%"></tr></td></table>
 
-
-
 **What is ETL?** 
 
 We are living in a world of data. The volume of data that is being generated and collected continues to increase at an exponential rate.
