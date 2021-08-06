@@ -35,3 +35,11 @@ This phase can involve the following tasks:
 * Encrypting, or protecting data governed by industry standards or government regulations.
 
 **Load** : This last step involves moving the transformed data to a target data warehouse. Initially, the final data is loaded once, and thereafter periodic loading of data happens to keep the database up to date. Most of the time the ETL process is automated and batch-driven. Typically, ETL is scheduled to trigger during off-hours when traffic on the source systems and the destination systems is at its lowest.
+
+### Project Description
+
+#### Sources of Data
+Census Data : https://www2.census.gov/programs-surveys/popest/datasets/2010-2020/counties/totals/
+
+
+
