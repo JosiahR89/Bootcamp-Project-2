@@ -39,7 +39,7 @@ Raw data is extracted from various data sources, which can be structured or non 
 This can be compared to a staging area where the data gets cleansed, mapped, and transformed, often to a specific schema, so it meets operational requirements. 
 
 ## How we 'Transform'ed:
-* After studying the raw data and identifying the columns from each table, creating an Entity Relationship Diagram (ERD) to view a snap shot before rearranging data into required schema <br />
+* After studying the raw data and identifying the columns from each table, created an Entity Relationship Diagram (ERD) to view a snap shot before rearranging data into required schema <br />
 
     * <table><tr><td align="center"><img src="Images/ERD.jpg"></tr></td></table>
 * Filtering, handling null values, removing duplicates, validating, and normalizing the data.
