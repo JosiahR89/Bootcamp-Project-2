@@ -1,4 +1,5 @@
-## Extract Transform Load - Project 2
+## Extract Transform Load
+#### Project 2
 ![ETL](/Images/ETL_img.jpg)
 
 
@@ -12,7 +13,7 @@ ETL, which stands for Extract, Transform, and Load, is the process to
 * Transform the data into a clean, usable format
 * Load the data into target database systems that end-users can access and use for further analysis, to make business decisions and, to solve problems.
 
-### How ETL works
+#### How ETL works
 Lets understand each step of the ETL process
 
 #### Extract
