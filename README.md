@@ -40,6 +40,7 @@ This phase can involve the following tasks:
 
 #### Sources of Data
 Census Data : https://www2.census.gov/programs-surveys/popest/datasets/2010-2020/counties/totals/
+Covid Data : https://github.com/nytimes/covid-19-data
 
 
 
