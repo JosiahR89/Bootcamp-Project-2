@@ -48,7 +48,7 @@ This process can involve any of these methods:
 * Encrypting, or protecting data governed by industry standards or government regulations
 
 
-## How we 'Transform'ed:
+### How we 'Transform'ed:
 * After studying the raw data and identifying the columns from each table, created an Entity Relationship Diagram (ERD) to view a snap shot before rearranging data into required schema <br />
 
     * <table><tr><td align="center"><img src="Images/ERD.jpg"></tr></td></table>
