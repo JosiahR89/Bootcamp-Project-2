@@ -55,6 +55,7 @@ This can be compared to a staging area where the data gets cleansed, mapped, and
 
 -----------------------------------------------------------------------------------------------------
 **Examples of How our data can be used**:
+<br />
 Analysis -- Reports (showing covid cases vs flu) 
 <br />
 Visualizations -- US Map displaying covid active cases 
