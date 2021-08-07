@@ -52,7 +52,7 @@ This process can involve any of these methods:
 * After studying the raw data and identifying the columns from each table, created an Entity Relationship Diagram (ERD) to view a snap shot before rearranging data into required schema <br />
 
     * <table><tr><td align="center"><img src="Images/ERD.jpg"></tr></td></table>
-* We identified, cleaned, formatted and redistributed the data that we gathered from multiple datasets in to the new database, making sure it was executed in a sequence that ensures that data is loaded into relational tables accurately.
+* We identified, cleaned, formatted and redistributed the data that we gathered from multiple datasets in to the new PostgreSQL database, making sure it was executed in a sequence that data is loaded into relational tables accurately.
 
 ## Load : 
 This last step involves moving the transformed data to a target data warehouse. Initially, the final data is loaded once, and thereafter periodic loading of data happens to keep the database up to date. Most of the time the ETL process is automated and batch-driven. Typically, ETL is scheduled to trigger during off-hours when traffic on the source systems and the destination systems is at its lowest.
