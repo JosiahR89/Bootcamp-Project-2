@@ -40,13 +40,12 @@ The second step consists of transforming the raw data that has been extracted fr
 This can be compared to a staging area where the data gets cleansed, mapped, and transformed, often to a specific schema, so it meets operational requirements. 
 This process can involve any of these methods:
 
-* Filtering
-* Cleaning
 * Formatting the data into tables or joined tables
 * Performing calculations or summarizations 
-* Converting to correct data types
+* Converting data to correct data types
 * Deduplication
-* Encrypting, or protecting data governed by industry standards or government regulations.
+* Conducting tests/audits to ensure data quality and compliance
+* Encrypting, or protecting data governed by industry standards or government regulations
 
 
 ## How we 'Transform'ed:
