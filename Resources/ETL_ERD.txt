@@ -11,7 +11,7 @@ County  varchar(356)
 State_Fips int FK >- US_States.State_Fips
 
 
-US_Covid_Cases
+US_Covid_Data
 -
 Case_ID Serial PK
 CDate date 
@@ -19,24 +19,24 @@ County_Fips FK >- US_Counties.County_Fips
 No_Of_Cases
 No_Of_Deaths
 
-US_Population_2020_County
+US_Census_Data
 -
 ID Serial PK 
 County_Fips int FK >- US_Counties.County_Fips
-Population_2016 int,
-Population_2017 int,
-Population_2018 int,
-Population_2019 int,
-Population_2020 int,
-Births_2016 int,
-Births_2017 int,
-Births_2018 int,
-Births_2019 int,
-Births_2020 int,
-Deaths_2016 int,
-Deaths_2017 int,
-Deaths_2018 int,
-Deaths_2019 int,
+Population_2016 int
+Population_2017 int
+Population_2018 int
+Population_2019 int
+Population_2020 int
+Births_2016 int
+Births_2017 int
+Births_2018 int
+Births_2019 int
+Births_2020 int
+Deaths_2016 int
+Deaths_2017 int
+Deaths_2018 int
+Deaths_2019 int
 Deaths_2020 int
 
 
