@@ -1833,7 +1833,7 @@ County_Fips,County,State_Fips
 35007,Colfax County,35
 35009,Curry County,35
 35011,De Baca County,35
-35013,Do̱A Ana County,35
+35013,Doì±A Ana County,35
 35015,Eddy County,35
 35017,Grant County,35
 35019,Guadalupe County,35
@@ -3289,3 +3289,5 @@ County_Fips,County,State_Fips
 78010,St Croix,78
 78020,St John,78
 78030,St Thomas,78
+2063,Chugach Census Area,1
+2066,Copper River Census Area,1

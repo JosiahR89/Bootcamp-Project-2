@@ -59,7 +59,7 @@ CREATE TABLE WHO_Flu_Data (
     Total_Specimens int   NOT NULL,
     Total_A int   NOT NULL,
     Total_B int  NOT NULL,
-    Percent_Positive int   NOT NULL,
+    Percent_Positive decimal   NOT NULL,
     Percent_A decimal   NOT NULL,
     Percent_B decimal   NOT NULL,
     PRIMARY KEY (Case_ID),
