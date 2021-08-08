@@ -29,11 +29,10 @@ Raw data is extracted from various data sources, which can be structured or non 
 ## How we 'Extract'ed:
 **Data Sources :**
 * Census Data : https://www2.census.gov/programs-surveys/popest/datasets/2010-2020/counties/totals/
-    * Downloaded 2102 Census Data in csv format
+* State FIPS :  https://www.census.gov/library/reference/code-lists/ansi/ansi-codes-for-states.html
 * Covid 19 Data  : https://github.com/nytimes/covid-19-data
-    * New York Times has collected a large amount of COVID-19 data for the United States, and they have made this data freely available in a Github repostory. We dowloaded their Covid Data in csv format.    
-* Flu data for Comparision: WHO WEBSITE LINK GOES HERE
-    * Dowloaded Influenza Data in csv format
+    * New York Times has collected a large amount of COVID-19 data for the United States, and they have made this data freely available in a Github repostory. 
+* Flu data for Comparision: https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html
 
 ## Transform : 
 The second step consists of transforming the raw data that has been extracted from the above-mentioned sources into a format that can be used by different applications.
