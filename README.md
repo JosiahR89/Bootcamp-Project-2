@@ -51,7 +51,7 @@ This process can involve any of these methods:
 ### How we 'Transform'ed:
 * After studying the raw data and identifying the columns from each table, created an Entity Relationship Diagram (ERD) to view a snap shot before rearranging data into required schema <br />
 
-    * <table><tr><td align="center"><img src="Images/ERD_Ver1.jpg"></tr></td></table>
+    * <table><tr><td align="center"><img src="Images/ERD_Ver2.jpg"></tr></td></table>
 * We identified, cleaned, formatted and redistributed the data that we gathered from multiple datasets in to the new PostgreSQL database, making sure it was executed in a sequence that data is loaded into relational tables accurately.
 
 ## Load : 
