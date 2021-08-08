@@ -18,7 +18,7 @@ CREATE TABLE US_Counties (
 Drop table if exists US_Covid_Data cascade;
 CREATE TABLE US_Covid_Data (
     Case_ID Serial   NOT NULL,
-    CDate date   NOT NULL,
+    CDate timestamp with time zone   NOT NULL,
     County_Fips int   NOT NULL,
     No_Of_Cases int   NOT NULL,
     No_Of_Deaths int   NOT NULL,
