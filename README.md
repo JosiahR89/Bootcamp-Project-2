@@ -371,7 +371,7 @@ This last step involves moving the transformed data to a target data warehouse. 
 ## How we 'Load'ed:
 * RDBMS Used : PostgreSQL
 * Created a PostgreSQL database 'ETL'
-    * <table><tr><td align="center" width="80%><img src="Images/Load_Process_Images/db_ETL_create_1.jpg"></tr></td></table>
+    * <table><tr><td align="center" width="80%"><img src="Images/Load_Process_Images/db_ETL_create_1.jpg"></tr></td></table>
 * Followed ERD created earlier, developed SQL DDL queries with correct data types, primary keys, foreign keys, and other constraints
 * Created tables making sure they were created in correct order to handle foreign keys.
 
@@ -450,7 +450,7 @@ This last step involves moving the transformed data to a target data warehouse. 
 </details>
 
 * Executed these queries on pgAdmin to create tables
-    * <table><tr><td align="center"  width="80%><img src="Images/Load_Process_Images/db_ETL_execute_schema.jpg"></tr></td></table>
+    * <table><tr><td align="center"  width="80%"><img src="Images/Load_Process_Images/db_ETL_execute_schema.jpg"></tr></td></table>
 
 * Imported each CSV file into the corresponding SQL table making sure data is imported in the same order that the tables were created and account for the headers when importing to avoid errors.
 
