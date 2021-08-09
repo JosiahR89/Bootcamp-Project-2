@@ -115,6 +115,7 @@ This process can involve any of these methods:
 * Trimmed Leading and Trailing Spaces
 * Made sure There were no duplicates
 * Assigned State_Fips to each record by merging with States Dataframe using state abbeviation to compare
+* To handle the issue of incomming data from sources with unknown counties but know States, created a unique code based on the state_fips and assigned StateName as county Name. This observation came from US Census Data Table from where we used the same process for our county table.
 * created a new dataframe with 'County_Fips','County','State_Fips' columns
 * Identified 'County_Fips' as primary key
 * Identified 'State_Fips' as foreign key
@@ -166,6 +167,97 @@ This process can involve any of these methods:
 
 <br />
 
+**Table 3 : US_Covid_Data**
+* This was the data that required most transformation
+* Read from source raw feed to Pandas Dataframe 
+* Check for Nulls in any columns
+* If there are records that have a valid state but an unknown county, we keep the data and we assign the fips_county for these kind of records (mentioned above in the county table)
+    * column 'deaths' can contain Nulls but not Fips 
+    * Identified these records that has Fips as Null for cleaning
+* moved then to a seperate Dataframe    
+* Trimmed Leading and Trailing Spaces for required fields
+* Merged with county table and assigned the County_Fips
+* Created a dataframe for records with No Nulls
+* Concatenated the clean dataframes
+* Replaced Null with zeros for column 'Deaths'
+* Converted fips and deaths columns to Int
+* selected fields 'date', 'county_fips', 'cases', 'deaths' to final dataframe
+* Wrote the final dataframe to US_Covid_Data.csv that can be imported in PostgreSQL
+
+<details>
+<summary><strong>Click to see code!</strong></summary>
+
+```python
+    
+    # This will connect to the raw file on their website to get yo to date data
+    covid_df = pd.read_csv('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv', parse_dates=['date'])
+    #if we are reading it form the raw file from the source, we can write it to csv if we choose to save it locally
+    #covid_df.to_csv('Resources/Source_Data/US_Covid_Data.csv', index=False)
+    print(covid_df)
+
+    # Check for Nulls in any colums
+    covid_df.isna().any()
+    # column 'deaths' can contain Nulls but not Fips 
+    # Identify these records for cleaning
+
+    # if (covid_df['fips'].isnull().values.any()):
+    #     print(covid_df[covid_df['fips'].isna()])
+
+    covid_df['fips'].isnull().values.any()
+
+    # If covid table has records that have state but an unknown county, we keep the data
+    na_covid_df = covid_df[covid_df['fips'].isna()]
+    
+    # stripping 'state' column of any leading and trailing spaces
+
+    #na_covid_df['state'] = na_covid_df['state'].str.strip()
+    na_covid_df['state'].apply(lambda x: x.strip()) 
+    #na_covid_df
+
+    na_covid_df = na_covid_df.merge(county_table_strip, how="left", left_on = "state", right_on="County")
+    
+
+    na_covid_df_final = na_covid_df[['date', 'county', 'state', 'County_Fips', 'cases', 'deaths']]
+    na_covid_df_final
+
+    # Records with Null Fips have been cleaned and fips from cencus table for --
+    # -- state_unknown counties have been used
+    # Renaming the column to match Us_Covid_Table
+
+    na_covid_df_final = na_covid_df_final.rename(columns = {'County_Fips':'county_fips'})
+    na_covid_df_final
+
+    na_covid_df_final['county_fips'].isnull().values.any()
+    # Non Null Covid Data
+    non_na_covid_df = covid_df[covid_df['fips'].notna()]  
+    non_na_covid_df
+
+    non_na_covid_df = non_na_covid_df.rename(columns = {'fips':'county_fips'})
+    non_na_covid_df
+    # Concatenate the clean dataframes
+    vertical_stack = pd. concat([na_covid_df_final, non_na_covid_df], axis=0) 
+    vertical_stack.isnull().any()
+    vertical_stack['deaths'] = vertical_stack['deaths'].fillna(0)
+    # Converting fips columns to Int
+    vertical_stack.county_fips = vertical_stack.county_fips.astype(int)
+    vertical_stack.deaths = vertical_stack.deaths.astype(int)
+
+
+    us_covid_table = vertical_stack[['date', 'county_fips', 'cases', 'deaths']]
+    #us_covid_table = us_covid_table.sort_values(by='date', ascending=False)
+    us_covid_table
+
+    # This table is ready for Loading
+    # LOAD US_Covid_Data.csv
+
+    # Write to US_Covid_Data.csv that can be imported in PostgreSQL
+    us_covid_table.to_csv('Resources/Transformed_Data/US_Covid_Data.csv', index=False)
+
+
+```
+</details>
+
+<br />
 
 ## Load : 
 This last step involves moving the transformed data to a target data warehouse. Initially, the final data is loaded once, and thereafter periodic loading of data happens to keep the database up to date. Most of the time the ETL process is automated and batch-driven. Typically, ETL is scheduled to trigger during off-hours when traffic on the source systems and the destination systems is at its lowest.
