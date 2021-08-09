@@ -315,6 +315,56 @@ This process can involve any of these methods:
 
 <br />
 
+**Table 5 : WHO_Flu_Data**
+* Read from source to Pandas Dataframe
+* Dropped a column not required
+* Records with missing data came in with 'X' instead of Null. Replaced 'X' with 0 as they were nummeric fields in destination table.
+* Trimmed leading/trailing spaces for columns that are used in join conditions for merging dataframes
+* Added State_Fips 
+    * 'State_Fips','YEAR','WEEK','TOTAL SPECIMENS','TOTAL A','TOTAL B','PERCENT POSITIVE',
+    'PERCENT A','PERCENT B'
+* Wrote to WHO_Flu_Data.csv that can be imported in PostgreSQL
+
+<details>
+<summary><strong>Click to see code!</strong></summary>
+
+```python
+    who_flu_df = pd.read_csv('Resources/Source_Data/WHO_NREVSS_Clinical_Labs.csv')
+    #who_flu_df
+
+    # Drop Region Type
+    who_flu_df.drop(columns=['REGION TYPE'], inplace=True) 
+
+    # Replace 'X' with 0
+    who_flu_df.loc[who_flu_df['REGION'] == 'New York City', 'REGION'] = 'New York'
+    who_flu_df.loc[who_flu_df['TOTAL SPECIMENS'] == 'X', 'TOTAL SPECIMENS'] = 0
+    who_flu_df.loc[who_flu_df['TOTAL A'] == 'X', 'TOTAL A'] = 0
+    who_flu_df.loc[who_flu_df['TOTAL B'] == 'X', 'TOTAL B'] = 0
+    who_flu_df.loc[who_flu_df['PERCENT POSITIVE'] == 'X', 'PERCENT POSITIVE'] = 0
+    who_flu_df.loc[who_flu_df['PERCENT A'] == 'X', 'PERCENT A'] = 0
+    who_flu_df.loc[who_flu_df['PERCENT B'] == 'X', 'PERCENT B'] = 0
+    who_flu_df
+
+    # Add State_Fips and Remove Region
+    # Strip spaced
+    who_flu_df['REGION'].apply(lambda x: x.strip()) 
+
+    # Merge with US_States
+    who_flu_table = who_flu_df.merge(states_df, how='left', left_on='REGION', right_on='Sname')
+    who_flu_table = who_flu_table[['State_Fips','YEAR','WEEK','TOTAL SPECIMENS','TOTAL A','TOTAL B','PERCENT POSITIVE',
+    'PERCENT A','PERCENT B']]
+    who_flu_table
+    # Table is ready to load
+    # LOAD WHO_Flu_Data.csv
+    # Write to WHO_Flu_Data.csv that can be imported in PostgreSQL
+    who_flu_table.to_csv('Resources/Transformed_Data/WHO_Flu_Data.csv', index=False)
+
+
+```
+</details>
+
+<br />
+
 ## Load : 
 This last step involves moving the transformed data to a target data warehouse. Initially, the final data is loaded once, and thereafter periodic loading of data happens to keep the database up to date. Most of the time the ETL process is automated and batch-driven. Typically, ETL is scheduled to trigger during off-hours when traffic on the source systems and the destination systems is at its lowest.
 
