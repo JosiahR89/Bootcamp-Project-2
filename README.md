@@ -455,7 +455,12 @@ This last step involves moving the transformed data to a target data warehouse. 
 * Imported each CSV file into the corresponding SQL table making sure data is imported in the same order that the tables were created and account for the headers when importing to avoid errors.
     * <table><tr><td align="center"  width="80%"><img src="Images/Load_Process_Images/db_ETL_load_transformed_data_1_2.jpg"></tr></td></table>
 
+* Created a view with most used tables for easy querying of data
+    * <table><tr><td align="center"  width="80%"><img src="Images/Load_Process_Images/view.jpg"></tr></td></table>
 
+* Examples of some queries we executed to test Data:
+    * <table><tr><td align="center"  width="80%"><img src="Images/Load_Process_Images/Q1.jpg"></tr></td></table>
+    * <table><tr><td align="center"  width="80%"><img src="Images/Load_Process_Images/Q2.jpg"></tr></td></table>    
 
 
 -----------------------------------------------------------------------------------------------------
