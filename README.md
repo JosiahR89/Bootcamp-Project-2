@@ -465,12 +465,4 @@ This last step involves moving the transformed data to a target data warehouse. 
     * <table><tr><td align="center"  width="80%"><img src="Images/Load_Process_Images/Qry2.jpg"></tr></td></table>       
 
 
------------------------------------------------------------------------------------------------------
-**Examples of How our data can be used**:
-<br />
-Analysis -- Reports (showing covid cases vs flu) 
-<br />
-daily covid cases with new cases
-<br />
-Visualizations -- US Map displaying covid active cases 
 
