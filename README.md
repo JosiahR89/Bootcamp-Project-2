@@ -71,8 +71,48 @@ This process can involve any of these methods:
     * <table><tr><td align="center"><img src="Images/ERD_Ver2.jpg"></tr></td></table>
 * We identified, cleaned, formatted and redistributed the data that we gathered from multiple datasets in to the new PostgreSQL database, making sure it was executed in a sequence that data is loaded into relational tables accurately.
 
-**Cleaning**
-Compared Fips_County 
+**Table 1 : US_States**
+* Read from source to Pandas Dataframe
+* Trimmed Leading and Trailing Spaces
+* Made sure There were no duplicates
+* Identified Fips_id as primary key
+* Wrote to US_States.csv that can be imported in PostgreSQL
+
+<details>
+<summary><strong>Click to see code!</strong></summary>
+
+```python
+    states_df =  pd.read_csv('Resources/Source_Data/US_States.csv')
+    states_df
+
+    #Trim leading and trailing spaces for string type data
+    sdf_obj = states_df.select_dtypes(['object'])
+    states_df[sdf_obj.columns] = sdf_obj.apply(lambda x: x.str.strip()) 
+
+    # Check for duplicates 
+    # checking total States_Fips vs. total unique States_Fips. 
+    # If they are equal, then there are no duplicates
+    States_Fips_List = states_df['State_Fips']
+    States_Table_Count = States_Fips_List.count()
+    Unique_States_Count = States_Fips_List.nunique()
+    print (States_Table_Count, Unique_States_Count)
+
+    # State Table is clean. No duplicate FIPS exist. 
+    # This table is ready for PostgreSQL Table
+
+        
+    # Write to US_States.csv that can be imported in PostgreSQL
+    states_df.to_csv('Resources/Transformed_Data/Us_States.csv', index=False)
+
+
+```
+</details>
+
+<br />
+**Table 2 : US_Counties**
+* Dowloaded from source
+* Made sure There were no duplicates
+
 
 ## Load : 
 This last step involves moving the transformed data to a target data warehouse. Initially, the final data is loaded once, and thereafter periodic loading of data happens to keep the database up to date. Most of the time the ETL process is automated and batch-driven. Typically, ETL is scheduled to trigger during off-hours when traffic on the source systems and the destination systems is at its lowest.
