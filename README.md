@@ -5,6 +5,22 @@
 ## Project Description 
 In 2020-2021, the most important global issue has been the COVID-19 pandemic. Health professionals and researchers around the world have been working hard to make available, the data related to cases, testing, and mortality. We are utilizing publically available Covid 19 data for our ETL project. 
 
+**At the end of ETL process, the prepared data would have answered these questions and more:**
+ * "Total reported cases" and "Total reported deaths" per county, state 
+ * New cases and new deaths
+ * Case Fatality Rate (No. of confirmed positive cases vs no of deaths)
+ * Covid Mortality Rate (No. of confirmed positive cases vs no of covid deaths)
+ * Positive Cases per capita
+ * Flu cases as compared to Covid cases
+
+**Future Analysis Ideas**
+Have the births increased or decreased duing the time of Covid <br />
+Case posityvity Rate <br />
+Comparision of covid with other seasonal viruses <br />
+Effects of covid on hospital and ER visits for non covid related heath issues <br />
+Effects of covid on on going treatments for chronic illnesses <br />
+Effect of covid on mental health <br />
+
 **Brief introduction to ETL** 
 
 We are living in a world of data. The volume of data that is being generated and collected continues to increase at an exponential rate.
@@ -28,10 +44,12 @@ Raw data is extracted from various data sources, which can be structured or non 
 
 ## How we 'Extract'ed:
 **Data Sources :**
+* Covid 19 Data raw feed : https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv
+<!--https://github.com/nytimes/covid-19-data-->
+    * New York Times has collected a large amount of COVID-19 data for the United States, and they have made this data freely available in a Github repostory. 
 * Census Data : https://www2.census.gov/programs-surveys/popest/datasets/2010-2020/counties/totals/
 * State FIPS :  https://www.census.gov/library/reference/code-lists/ansi/ansi-codes-for-states.html
-* Covid 19 Data  : https://github.com/nytimes/covid-19-data
-    * New York Times has collected a large amount of COVID-19 data for the United States, and they have made this data freely available in a Github repostory. 
+* County FIPS : https://www.nrcs.usda.gov/wps/portal/nrcs/detail/national/home/cid=nrcs143_013697
 * Flu data for Comparision: https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html
 
 ## Transform : 
@@ -52,6 +70,9 @@ This process can involve any of these methods:
 
     * <table><tr><td align="center"><img src="Images/ERD_Ver2.jpg"></tr></td></table>
 * We identified, cleaned, formatted and redistributed the data that we gathered from multiple datasets in to the new PostgreSQL database, making sure it was executed in a sequence that data is loaded into relational tables accurately.
+
+**Cleaning**
+Compared Fips_County 
 
 ## Load : 
 This last step involves moving the transformed data to a target data warehouse. Initially, the final data is loaded once, and thereafter periodic loading of data happens to keep the database up to date. Most of the time the ETL process is automated and batch-driven. Typically, ETL is scheduled to trigger during off-hours when traffic on the source systems and the destination systems is at its lowest.
