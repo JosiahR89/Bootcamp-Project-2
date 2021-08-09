@@ -460,6 +460,7 @@ This last step involves moving the transformed data to a target data warehouse. 
 
 * Examples of some queries we executed to test Data:
     * <table><tr><td align="center"  width="80%"><img src="Images/Load_Process_Images/Q3.jpg"></tr></td></table>   
+    * <table><tr><td align="center"  width="80%"><img src="Images/Load_Process_Images/Q1.jpg"></tr></td></table>       
 
 
 -----------------------------------------------------------------------------------------------------
