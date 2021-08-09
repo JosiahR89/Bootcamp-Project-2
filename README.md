@@ -318,7 +318,7 @@ This process can involve any of these methods:
 **Table 5 : WHO_Flu_Data**
 * Read from source to Pandas Dataframe
 * Dropped a column not required
-* Records with missing data came in with 'X' instead of Null. Replaced 'X' with 0 as they were nummeric fields in destination table.
+* Records with missing data came in with 'X' instead of Null. Replaced 'X' with -1 as they were nummeric fields in destination table.
 * Trimmed leading/trailing spaces for columns that are used in join conditions for merging dataframes
 * Added State_Fips 
     * 'State_Fips','YEAR','WEEK','TOTAL SPECIMENS','TOTAL A','TOTAL B','PERCENT POSITIVE',
@@ -335,14 +335,14 @@ This process can involve any of these methods:
     # Drop Region Type
     who_flu_df.drop(columns=['REGION TYPE'], inplace=True) 
 
-    # Replace 'X' with 0
+    # Replace 'X' with -1
     who_flu_df.loc[who_flu_df['REGION'] == 'New York City', 'REGION'] = 'New York'
-    who_flu_df.loc[who_flu_df['TOTAL SPECIMENS'] == 'X', 'TOTAL SPECIMENS'] = 0
-    who_flu_df.loc[who_flu_df['TOTAL A'] == 'X', 'TOTAL A'] = 0
-    who_flu_df.loc[who_flu_df['TOTAL B'] == 'X', 'TOTAL B'] = 0
-    who_flu_df.loc[who_flu_df['PERCENT POSITIVE'] == 'X', 'PERCENT POSITIVE'] = 0
-    who_flu_df.loc[who_flu_df['PERCENT A'] == 'X', 'PERCENT A'] = 0
-    who_flu_df.loc[who_flu_df['PERCENT B'] == 'X', 'PERCENT B'] = 0
+    who_flu_df.loc[who_flu_df['TOTAL SPECIMENS'] == 'X', 'TOTAL SPECIMENS'] = -1
+    who_flu_df.loc[who_flu_df['TOTAL A'] == 'X', 'TOTAL A'] = -1
+    who_flu_df.loc[who_flu_df['TOTAL B'] == 'X', 'TOTAL B'] = -1
+    who_flu_df.loc[who_flu_df['PERCENT POSITIVE'] == 'X', 'PERCENT POSITIVE'] = -1
+    who_flu_df.loc[who_flu_df['PERCENT A'] == 'X', 'PERCENT A'] = -1
+    who_flu_df.loc[who_flu_df['PERCENT B'] == 'X', 'PERCENT B'] = -1
     who_flu_df
 
     # Add State_Fips and Remove Region
