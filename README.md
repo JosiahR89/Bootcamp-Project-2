@@ -372,7 +372,8 @@ This last step involves moving the transformed data to a target data warehouse. 
 * RDBMS Used : PostgreSQL
 * Created a PostgreSQL database 'ETL'
     * <table><tr><td align="center"><img src="Images/Load_Process_Images/db_ETL_create_1.jpg"></tr></td></table>
-* Followed ERD created earlier, developed SQL queries to create tables making sure they were created in correct order to handle foreign keys.
+* Followed ERD created earlier, developed SQL DDL queries with correct data types, primary keys, foreign keys, and other constraints
+* Created tables making sure they were created in correct order to handle foreign keys.
 
 <details>
 <summary><strong>Click to see code!</strong></summary>
@@ -448,13 +449,9 @@ This last step involves moving the transformed data to a target data warehouse. 
 
 </details>
 
-<br />
-
 * Executed these queries on pgAdmin to create tables
     * <table><tr><td align="center"><img src="Images/Load_Process_Images/db_ETL_execute_schema.jpg"></tr></td></table>
 
-
-* Specified data types, primary keys, foreign keys, and other constraints while creating tables.
 * Imported each CSV file into the corresponding SQL table making sure data is imported in the same order that the tables were created and account for the headers when importing to avoid errors.
 
 
