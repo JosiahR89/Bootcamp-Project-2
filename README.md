@@ -74,7 +74,7 @@ This process can involve any of these methods:
 **Table 1 : US_States**
 * Read from source to Pandas Dataframe
 * Trimmed Leading and Trailing Spaces
-* Made sure there were no duplicates
+* Made sure There were no duplicates
 * Identified 'State_Fips' as primary key
 * Wrote to US_States.csv that can be imported in PostgreSQL
 
@@ -116,7 +116,7 @@ This process can involve any of these methods:
 * Made sure There were no duplicates
 * Assigned State_Fips to each record by merging with States Dataframe using state abbeviation to compare
 * To handle the issue of incoming data from sources with unknown counties but known States, created a unique code based on the state_fips and assigned StateName as county Name. This observation came from US Census Data Table from where we used the same process for our county table.
-* Created a new dataframe with 'County_Fips','County','State_Fips' columns
+* created a new dataframe with 'County_Fips','County','State_Fips' columns
 * Identified 'County_Fips' as primary key
 * Identified 'State_Fips' as foreign key
 * Wrote to Us_Counties.csv that can be imported in PostgreSQL
@@ -172,16 +172,16 @@ This process can involve any of these methods:
 * Read from source raw feed to Pandas Dataframe 
 * Checked for Nulls in any columns
 * If there are records that have a valid state but an unknown county, kept the records and assigned the fips_county for these records (with the special id's mentioned above in the county table)
-    * Column 'deaths' can contain Nulls but not Fips 
+    * column 'deaths' can contain Nulls but not Fips 
     * Identified these records that has Fips as Null
-* Moved them to a seperate Dataframe    
+* moved them to a seperate Dataframe    
 * Trimmed Leading and Trailing Spaces for required fields
 * Merged with county table and assigned the County_Fips
 * Created a dataframe for records with No Nulls
 * Concatenated the clean dataframes
 * Replaced Null with zeros for column 'Deaths'
 * Converted fips and deaths columns to Int
-* Selected fields 'date', 'county_fips', 'cases', 'deaths' to final dataframe
+* selected fields 'date', 'county_fips', 'cases', 'deaths' to final dataframe
 * Wrote the final dataframe to US_Covid_Data.csv that can be imported in PostgreSQL
 
 <details>
@@ -262,13 +262,13 @@ This process can involve any of these methods:
 **Table 4 : Us_Census_Data**
 * Read from source to Pandas Dataframe
 * The original table had 150+ columns
-* Removed Records with for State Totals as they are reduntant
-* State totals can be calculated from county information
+* Removed records with for State Totals as they are reduntant
+* state totals can be calculated from county information
 * Created Fips_County Field using State and County Fields that were both stored seperately as integers 
-    * Converted state and county fields from int to str
-    * Added leading zeros to State and County get the format required for fips_county
-    * Concatenated state and county to make County_Fips Code that follows the Fips_County format
-* Created final dataframe with selected fields   
+    * converted state and county fields from int to str
+    * added leading zeros to State and County get the format required for fips_county
+    * concatenated state and county to make County_Fips Code that follows the Fips_County format
+* created final dataframe with selected fields   
     * 'fips','POPESTIMATE2016','POPESTIMATE2017','POPESTIMATE2018','POPESTIMATE2019',
     'POPESTIMATE2020', 'BIRTHS2016','BIRTHS2017','BIRTHS2018','BIRTHS2019','BIRTHS2020',
     'DEATHS2016','DEATHS2017','DEATHS2018','DEATHS2019','DEATHS2020'
