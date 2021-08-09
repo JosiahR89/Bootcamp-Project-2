@@ -368,6 +368,8 @@ This process can involve any of these methods:
 ## Load : 
 This last step involves moving the transformed data to a target data warehouse. Initially, the final data is loaded once, and thereafter periodic loading of data happens to keep the database up to date. Most of the time the ETL process is automated and batch-driven. Typically, ETL is scheduled to trigger during off-hours when traffic on the source systems and the destination systems is at its lowest.
 
+## How we 'Load'ed:
+
 -----------------------------------------------------------------------------------------------------
 **Examples of How our data can be used**:
 <br />
