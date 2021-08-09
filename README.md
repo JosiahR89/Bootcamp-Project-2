@@ -170,11 +170,11 @@ This process can involve any of these methods:
 **Table 3 : US_Covid_Data**
 * This was the data that required most transformation
 * Read from source raw feed to Pandas Dataframe 
-* Check for Nulls in any columns
-* If there are records that have a valid state but an unknown county, we keep the data and we assign the fips_county for these kind of records (mentioned above in the county table)
+* Checked for Nulls in any columns
+* If there are records that have a valid state but an unknown county, kept the records and assigned the fips_county for these records (with the special id's mentioned above in the county table)
     * column 'deaths' can contain Nulls but not Fips 
-    * Identified these records that has Fips as Null for cleaning
-* moved then to a seperate Dataframe    
+    * Identified these records that has Fips as Null
+* moved them to a seperate Dataframe    
 * Trimmed Leading and Trailing Spaces for required fields
 * Merged with county table and assigned the County_Fips
 * Created a dataframe for records with No Nulls
