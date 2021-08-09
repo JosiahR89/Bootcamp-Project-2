@@ -75,7 +75,7 @@ This process can involve any of these methods:
 * Read from source to Pandas Dataframe
 * Trimmed Leading and Trailing Spaces
 * Made sure There were no duplicates
-* Identified Fips_id as primary key
+* Identified 'State_Fips' as primary key
 * Wrote to US_States.csv that can be imported in PostgreSQL
 
 <details>
@@ -109,9 +109,62 @@ This process can involve any of these methods:
 </details>
 
 <br />
+
 **Table 2 : US_Counties**
-* Dowloaded from source
+* Read from source to Pandas Dataframe
+* Trimmed Leading and Trailing Spaces
 * Made sure There were no duplicates
+* Assigned State_Fips to each record by merging with States Dataframe using state abbeviation to compare
+* created a new dataframe with 'County_Fips','County','State_Fips' columns
+* Identified 'County_Fips' as primary key
+* Identified 'State_Fips' as foreign key
+* Wrote to Us_Counties.csv that can be imported in PostgreSQL
+
+<details>
+<summary><strong>Click to see code!</strong></summary>
+
+```python
+    counties_df = pd.read_csv('Resources/Source_Data/US_Counties.csv', encoding='latin-1')
+
+    # counties are uniquly identified by County_FIPS which is a unique ID 
+    # called Federal Information Processing Standards
+    # Check for duplicates 
+    # I am checking total County_Fips vs. total unique County_Fips. 
+    # If they are equal, then there are no duplicates
+    County_Fips_List = counties_df['County_Fips']
+    County_Table_Count = County_Fips_List.count()
+    Unique_Counties_Count = County_Fips_List.nunique()
+    print (County_Table_Count, Unique_Counties_Count)
+
+
+    # County Table is Clean. No Nulls, no duplicate FIPS exist
+    #Trim leading and trailing spaces for string type data
+    df_obj = counties_df.select_dtypes(['object'])
+    counties_df[df_obj.columns] = df_obj.apply(lambda x: x.str.strip()) 
+
+    # Merge County table with state 
+    county_table = counties_df.merge(states_df, how='left', left_on='State', right_on='Sabbr')
+    county_table = county_table[['County_Fips', 'County', 'State_Fips']]
+    county_table['County'] = county_table['County'].str.title()
+
+
+    df_obj = county_table.select_dtypes(['object'])
+    county_table[df_obj.columns] = df_obj.apply(lambda x: x.str.strip()) 
+    county_table_strip = county_table
+    county_table_strip
+
+    # This table is ready for PostGressql
+    county_table_strip
+    # LOAD Us_Counties.csv
+
+    # Write to Us_Counties.csv that can be imported in PostgreSQL
+    county_table_strip.to_csv('Resources/Transformed_Data/Us_Counties.csv', index=False)
+
+
+```
+</details>
+
+<br />
 
 
 ## Load : 
