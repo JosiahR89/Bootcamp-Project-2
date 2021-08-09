@@ -45,8 +45,7 @@ Raw data is extracted from various data sources, which can be structured or non 
 ## How we 'Extract'ed:
 **Data Sources :**
 * Covid 19 Data raw feed : https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv
-<!--https://github.com/nytimes/covid-19-data-->
-    * New York Times has collected a large amount of COVID-19 data for the United States, and they have made this data freely available in a Github repostory. 
+    * New York Times has collected a large amount of COVID-19 data for the United States, and they have made this data publically available. We are connecting and extracting data by connecting to their raw feed.    
 * Census Data : https://www2.census.gov/programs-surveys/popest/datasets/2010-2020/counties/totals/
 * State FIPS :  https://www.census.gov/library/reference/code-lists/ansi/ansi-codes-for-states.html
 * County FIPS : https://www.nrcs.usda.gov/wps/portal/nrcs/detail/national/home/cid=nrcs143_013697
