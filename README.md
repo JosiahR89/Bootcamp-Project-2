@@ -369,9 +369,91 @@ This process can involve any of these methods:
 This last step involves moving the transformed data to a target data warehouse. Initially, the final data is loaded once, and thereafter periodic loading of data happens to keep the database up to date. Most of the time the ETL process is automated and batch-driven. Typically, ETL is scheduled to trigger during off-hours when traffic on the source systems and the destination systems is at its lowest.
 
 ## How we 'Load'ed:
-* Create a PostgreSQL database 'ETL' and Imported tranformed tables
- * <table><tr><td align="center"><img src="Images/Load_Process_Images/db_ETL_create_1.jpg"></tr></td></table>
-* Followed table schema to create tables making sure they were created in correct order to handle foreign keys.
+* RDBMS Used : PostgreSQL
+* Created a PostgreSQL database 'ETL'
+    * <table><tr><td align="center"><img src="Images/Load_Process_Images/db_ETL_create_1.jpg"></tr></td></table>
+* Followed ERD created earlier, developed SQL queries to create tables making sure they were created in correct order to handle foreign keys.
+
+<details>
+<summary><strong>Click to see code!</strong></summary>
+
+    Drop table if exists US_States cascade;
+    CREATE TABLE US_States (
+        State_Fips int   NOT NULL,
+        Sabbr char(2)   NOT NULL,
+        Sname varchar(356)   NOT NULL,
+        PRIMARY KEY (State_Fips)
+    );
+
+    Drop table if exists US_Counties cascade;
+    CREATE TABLE US_Counties (
+        County_Fips int   NOT NULL,
+        County varchar(356)   NOT NULL,
+        State_Fips int   NOT NULL,
+        PRIMARY KEY (County_Fips),
+        FOREIGN KEY(State_Fips) REFERENCES US_States (State_Fips)
+    );
+
+    Drop table if exists US_Covid_Data cascade;
+    CREATE TABLE US_Covid_Data (
+        Case_ID Serial   NOT NULL,
+        CDate date   NOT NULL,
+        County_Fips int   NOT NULL,
+        No_Of_Cases int   NOT NULL,
+        No_Of_Deaths int   NOT NULL,
+        PRIMARY KEY (Case_ID),
+        FOREIGN KEY(County_Fips) REFERENCES US_Counties (County_Fips) 
+    );
+
+    Drop table if exists US_Census_Data cascade;
+    CREATE TABLE US_Census_Data (
+        ID Serial   NOT NULL,
+        County_Fips int   NOT NULL,
+        Population_2016 int   NOT NULL,
+        Population_2017 int   NOT NULL,
+        Population_2018 int   NOT NULL,
+        Population_2019 int   NOT NULL,
+        Population_2020 int   NOT NULL,
+        Births_2016 int   NOT NULL,
+        Births_2017 int   NOT NULL,
+        Births_2018 int   NOT NULL,
+        Births_2019 int   NOT NULL,
+        Births_2020 int   NOT NULL,
+        Deaths_2016 int   NOT NULL,
+        Deaths_2017 int   NOT NULL,
+        Deaths_2018 int   NOT NULL,
+        Deaths_2019 int   NOT NULL,
+        Deaths_2020 int   NOT NULL,
+        PRIMARY KEY (ID),
+        FOREIGN KEY(County_Fips) REFERENCES US_Counties (County_Fips)
+    );
+
+
+    Drop table if exists WHO_Flu_Data cascade;
+    CREATE TABLE WHO_Flu_Data (
+        Case_ID Serial   NOT NULL,
+        State_Fips int   NOT NULL,
+        Year int   NOT NULL,
+        Week int   NOT NULL,
+        Total_Specimens int   NOT NULL,
+        Total_A int   NOT NULL,
+        Total_B int  NOT NULL,
+        Percent_Positive decimal   NOT NULL,
+        Percent_A decimal   NOT NULL,
+        Percent_B decimal   NOT NULL,
+        PRIMARY KEY (Case_ID),
+        FOREIGN KEY(State_Fips) REFERENCES US_States (State_Fips)
+    );
+
+
+</details>
+
+<br />
+
+* Executed these queries on pgAdmin to create tables
+    * <table><tr><td align="center"><img src="Images/Load_Process_Images/db_ETL_execute_schema.jpg"></tr></td></table>
+
+
 * Specified data types, primary keys, foreign keys, and other constraints while creating tables.
 * Imported each CSV file into the corresponding SQL table making sure data is imported in the same order that the tables were created and account for the headers when importing to avoid errors.
 
