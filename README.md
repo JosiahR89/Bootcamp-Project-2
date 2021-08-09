@@ -115,7 +115,7 @@ This process can involve any of these methods:
 * Trimmed Leading and Trailing Spaces
 * Made sure There were no duplicates
 * Assigned State_Fips to each record by merging with States Dataframe using state abbeviation to compare
-* To handle the issue of incomming data from sources with unknown counties but know States, created a unique code based on the state_fips and assigned StateName as county Name. This observation came from US Census Data Table from where we used the same process for our county table.
+* To handle the issue of incoming data from sources with unknown counties but known States, created a unique code based on the state_fips and assigned StateName as county Name. This observation came from US Census Data Table from where we used the same process for our county table.
 * created a new dataframe with 'County_Fips','County','State_Fips' columns
 * Identified 'County_Fips' as primary key
 * Identified 'State_Fips' as foreign key
@@ -252,6 +252,62 @@ This process can involve any of these methods:
 
     # Write to US_Covid_Data.csv that can be imported in PostgreSQL
     us_covid_table.to_csv('Resources/Transformed_Data/US_Covid_Data.csv', index=False)
+
+
+```
+</details>
+
+<br />
+
+**Table 4 : Us_Census_Data**
+* Read from source to Pandas Dataframe
+* The original table had 150+ columns
+* Removed records with for State Totals as they are reduntant
+* state totals can be calculated from county information
+* Created Fips_County Field using State and County Fields that were both stored seperately as integers 
+    * converted state and county fields from int to str
+    * added leading zeros to State and County get the format required for fips_county
+    * concatenated state and county to make County_Fips Code that follows the Fips_County format
+* created final dataframe with selected fields   
+    * 'fips','POPESTIMATE2016','POPESTIMATE2017','POPESTIMATE2018','POPESTIMATE2019',
+    'POPESTIMATE2020', 'BIRTHS2016','BIRTHS2017','BIRTHS2018','BIRTHS2019','BIRTHS2020',
+    'DEATHS2016','DEATHS2017','DEATHS2018','DEATHS2019','DEATHS2020'
+* Wrote to US_Census_Data.csv that can be imported in PostgreSQL
+
+<details>
+<summary><strong>Click to see code!</strong></summary>
+
+```python
+    population_data = pd.read_csv('Resources/Source_Data/US_Census_Data_2020.csv', encoding='latin-1')
+    # population_data.loc[population_data['STNAME'] == population_data['CTYNAME']]
+    # County = 0 are records for State Totals
+    # removed these because state totals can be calculated from county information
+    population_data = population_data.loc[population_data['COUNTY'] > 0]
+
+    # converted state and county fields from int to str
+    population_data['STATE'] = population_data['STATE'].astype('str')
+    population_data['COUNTY'] = population_data['COUNTY'].astype('str')
+
+    # filled with leading zeros to get the format required for fips_county
+    population_data['STATE']=population_data['STATE'].apply(lambda x: x.zfill(2))
+    population_data['COUNTY']=population_data['COUNTY'].apply(lambda x: x.zfill(3))
+
+    # concatenated state and county fips to make a County_Fips Code that follows the Fips_County convention
+    population_data['fips'] = population_data['STATE'] + population_data['COUNTY']
+    # population_data['fips'] 
+    population_data
+
+
+    population_data = population_data[['fips','POPESTIMATE2016','POPESTIMATE2017','POPESTIMATE2018','POPESTIMATE2019',
+    'POPESTIMATE2020', 'BIRTHS2016','BIRTHS2017','BIRTHS2018','BIRTHS2019','BIRTHS2020',
+    'DEATHS2016','DEATHS2017','DEATHS2018','DEATHS2019','DEATHS2020']]
+    population_data
+    # Table is ready to load
+
+    # LOAD US_Census_Data.csv
+
+    # Write to US_Census_Data.csv that can be imported in PostgreSQL
+    population_data.to_csv('Resources/Transformed_Data/US_Census_Data.csv', index=False)
 
 
 ```
