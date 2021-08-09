@@ -43,7 +43,7 @@ Raw data is extracted from various data sources, which can be structured or non 
 * CRM (Salesforce Sales Cloud, Quickbase etc.) and ERP systems(Katana, Oracle NetSuite etc)
 * Web pages
 
-## How we 'Extract'ed:
+## How data was 'Extract'ed in our project:
 **Data Sources :**
 * Covid 19 Data raw feed : https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv
     * New York Times has collected a large amount of COVID-19 data for the United States, and they have made this data publically available. We are connecting and extracting data by connecting to their raw feed.    
@@ -65,7 +65,7 @@ This process can involve any of these methods:
 * Encrypting, or protecting data governed by industry standards or government regulations
 
 
-### How we 'Transform'ed:
+### How data was 'Transform'ed in our project:
 * After studying the raw data and identifying the columns from each table, created an Entity Relationship Diagram (ERD) to view a snap shot before rearranging data into required schema <br />
 
     * <table><tr><td align="center"><img src="Images/ERD_Ver2.jpg"></tr></td></table>
@@ -368,7 +368,7 @@ This process can involve any of these methods:
 ## Load : 
 This last step involves moving the transformed data to a target data warehouse. Initially, the final data is loaded once, and thereafter periodic loading of data happens to keep the database up to date. Most of the time the ETL process is automated and batch-driven. Typically, ETL is scheduled to trigger during off-hours when traffic on the source systems and the destination systems is at its lowest.
 
-## How we 'Load'ed:
+## How data was 'Load'ed  in our project:
 * RDBMS Used : PostgreSQL
 * Created a PostgreSQL database 'ETL'
     * <table><tr><td align="center" width="80%"><img src="Images/Load_Process_Images/db_ETL_create_1.jpg"></tr></td></table>
