@@ -14,8 +14,9 @@ In 2020-2021, the most important global issue has been the COVID-19 pandemic. He
  * Flu cases as compared to Covid cases
 
 **Future Analysis Ideas**
+
 Have the births increased or decreased duing the time of Covid <br />
-Case posityvity Rate <br />
+Case positivity Rate <br />
 Comparision of covid with other seasonal viruses <br />
 Effects of covid on hospital and ER visits for non covid related heath issues <br />
 Effects of covid on on going treatments for chronic illnesses <br />
