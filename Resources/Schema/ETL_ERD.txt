@@ -50,7 +50,7 @@ Week int
 Total_Specimens int
 Total_A int,
 Total_B int,
-Percent_Positive int
+Percent_Positive decimal
 Percent_A decimal
 Percent_B decimal
 
