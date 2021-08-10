@@ -9,7 +9,7 @@
     * [Source Data](/Resources/Source_Data)
     * [Transformed Data](/Resources/Transformed_Data)
     * [Bonus Read FromDB Examples](/Resources/Bonus_ReadFromDBExamples)
-* [Jupyter Notebook  'ETl_Code.ipynb'](ETl_Code.ipynb) has all the cleaning code 
+* [Jupyter Notebook  'ETl_Code.ipynb'](ETL_Code.ipynb) has all the cleaning code 
 * [Group Project Detailed Report](Group-Project-2-Detailed-Report.docx)
 
 ## Project Description 
