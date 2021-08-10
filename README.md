@@ -3,7 +3,7 @@
 <table><tr><td align="center"><img src="Images/ETL_img_sm.jpg" width="100%"></tr></td></table>
 
 ## Repository Files and Folders:
-* 'Resources': Contains 'Schema' , 'Source Data' , 'Transformed Data', and 'Bonus_ReadFromDBExamples'
+*  [Resources](/Resources) 'folder': Contains 'Schema' , 'Source Data' , 'Transformed Data', and 'Bonus_ReadFromDBExamples'
 * Jupyter Notebook  'ETl_Code.ipynb' has all the cleaning code 
 
 ## Project Description 
