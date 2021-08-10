@@ -3,9 +3,8 @@
 <table><tr><td align="center"><img src="Images/ETL_img_sm.jpg" width="100%"></tr></td></table>
 
 ## Repository Files and Folders:
-Folder PyPoll : This folder contains two folders
-'Resources': Contains 'Schema' , 'Source Data' , 'Transformed Data', and 'Bonus_ReadFromDBExamples'
-Jupyter Notebook  'ETl_Code.ipynb' has all the cleaning code 
+* 'Resources': Contains 'Schema' , 'Source Data' , 'Transformed Data', and 'Bonus_ReadFromDBExamples'
+* Jupyter Notebook  'ETl_Code.ipynb' has all the cleaning code 
 
 ## Project Description 
 In 2020-2021, the most important global issue has been the COVID-19 pandemic. Health professionals and researchers around the world have been working hard to make available, the data related to cases, testing, and mortality. We are utilizing publically available Covid 19 data for our ETL project. 
