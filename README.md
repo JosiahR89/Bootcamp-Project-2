@@ -4,7 +4,7 @@
 
 ## Repository Files and Folders:
 *  [Resources](/Resources) : 
-    * [Images](/Resources/Images)  
+*  [Images](/Images)  
     * [Schema](/Resources/Schema)  
     * [Source Data](/Resources/Source_Data)
     * [Transformed Data](/Resources/Transformed_Data)
