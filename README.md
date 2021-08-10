@@ -474,7 +474,7 @@ This last step involves moving the transformed data to a target data warehouse. 
 * Latest Covid19 numbers for the  of California per county      
     * <table><tr><td align="center"  width="80%"><img src="Images/Load_Process_Images/Qry2.jpg"></tr></td></table>     
 * Total Coronavirus Deaths in USA
-    * <table><tr><td align="center"  width="80%"><img src="Images/outputDF.jpg"></tr></td></table>   
+    * <table><tr><td align="center"  width="60%"><img src="Images/outputDF.jpg"></tr></td></table>   
     * <table><tr><td align="center"  width="80%"><img src="Images/outputP.jpg"></tr></td></table>   
 
 
