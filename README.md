@@ -5,11 +5,13 @@
 ## Repository Files and Folders:
 *  [Resources](/Resources) : 
     * [Schema](/Resources/Schema)  
-    * [Source Data] (/Resources/Source_Data)
-    * [Transformed Data] (/Resources/Transformed_Data)
-    * [Bonus Read FromDB Examples] (/Resources/Bonus_ReadFromDBExamples)
+    * [Source Data](/Resources/Source_Data)
+    * [Transformed Data](/Resources/Transformed_Data)
+    * [Bonus Read FromDB Examples](/Resources/Bonus_ReadFromDBExamples)
+    * [Group Project Detailed Report]('Group-Project-2-Detailed-Report.docx')
     
-* [Jupyter Notebook  'ETl_Code.ipynb'] ('ETl_Code.ipynb') has all the cleaning code 
+    
+* [Jupyter Notebook  'ETl_Code.ipynb']('ETl_Code.ipynb') has all the cleaning code 
 
 ## Project Description 
 In 2020-2021, the most important global issue has been the COVID-19 pandemic. Health professionals and researchers around the world have been working hard to make available, the data related to cases, testing, and mortality. We are utilizing publically available Covid 19 data for our ETL project. 
