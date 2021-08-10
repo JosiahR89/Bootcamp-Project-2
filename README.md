@@ -13,7 +13,7 @@
 * [Group Project Detailed Report]('Group-Project-2-Detailed-Report.docx')
 
 ## Project Description 
-In 2020-2021, the most important global issue has been the COVID19 pandemic. Health professionals and researchers around the world have been working hard to make available, the data related to cases, testing, and mortality. We are utilizing publically available Covid 19 data for our ETL project. 
+In 2020-2021, the most important global issue has been the COVID19 pandemic. Health professionals and researchers around the world have been working hard to make available, the data related to cases, testing, and mortality. We are utilizing publically available Covid19 data for our ETL project. 
 
 **At the end of ETL process, the prepared data would have answered these questions and more:**
  * "Total reported cases" and "Total reported deaths" per county, state 
@@ -56,7 +56,7 @@ Raw data is extracted from various data sources, which can be structured or non 
 ## How data was 'Extract'ed in our project:
 **Data Sources :**
 * Covid 19 Data raw feed : https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv
-    * New York Times has collected a large amount of COVID-19 data for the United States, and they have made this data publically available. We are connecting and extracting data by connecting to their raw feed.    
+    * New York Times has collected a large amount of COVID19 data for the United States, and they have made this data publically available. We are connecting and extracting data by connecting to their raw feed.    
 * Census Data : https://www2.census.gov/programs-surveys/popest/datasets/2010-2020/counties/totals/
 * State FIPS :  https://www.census.gov/library/reference/code-lists/ansi/ansi-codes-for-states.html
 * County FIPS : https://www.nrcs.usda.gov/wps/portal/nrcs/detail/national/home/cid=nrcs143_013697
