@@ -13,7 +13,7 @@
 * [Group Project Detailed Report]('Group-Project-2-Detailed-Report.docx')
 
 ## Project Description 
-In 2020-2021, the most important global issue has been the COVID-19 pandemic. Health professionals and researchers around the world have been working hard to make available, the data related to cases, testing, and mortality. We are utilizing publically available Covid 19 data for our ETL project. 
+In 2020-2021, the most important global issue has been the COVID19 pandemic. Health professionals and researchers around the world have been working hard to make available, the data related to cases, testing, and mortality. We are utilizing publically available Covid 19 data for our ETL project. 
 
 **At the end of ETL process, the prepared data would have answered these questions and more:**
  * "Total reported cases" and "Total reported deaths" per county, state 
