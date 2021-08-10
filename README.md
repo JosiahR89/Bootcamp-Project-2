@@ -9,8 +9,8 @@
     * [Source Data](/Resources/Source_Data)
     * [Transformed Data](/Resources/Transformed_Data)
     * [Bonus Read FromDB Examples](/Resources/Bonus_ReadFromDBExamples)
-* [Jupyter Notebook  'ETl_Code.ipynb'](ETL_Code.ipynb) has all the cleaning code 
-* [Group Project Detailed Report](Group-Project-2-Detailed-Report.docx)
+* [Jupyter Notebook  'ETl_Code.ipynb'](ETL_Code.ipynb) cleaning (Transform) code 
+* Download [Group Project Detailed Report](Group-Project-2-Detailed-Report.docx)
 
 ## Project Description 
 In 2020-2021, the most important global issue has been the COVID19 pandemic. Health professionals and researchers around the world have been working hard to make available, the data related to cases, testing, and mortality. We are utilizing publically available Covid19 data for our ETL project. 
@@ -57,6 +57,7 @@ Raw data is extracted from various data sources, which can be structured or non 
 **Data Sources :**
 * Covid 19 Data raw feed : https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv
     * New York Times has collected a large amount of COVID19 data for the United States, and they have made this data publically available. We are connecting and extracting data by connecting to their raw feed.    
+
 * Census Data : https://www2.census.gov/programs-surveys/popest/datasets/2010-2020/counties/totals/
 * State FIPS :  https://www.census.gov/library/reference/code-lists/ansi/ansi-codes-for-states.html
 * County FIPS : https://www.nrcs.usda.gov/wps/portal/nrcs/detail/national/home/cid=nrcs143_013697
@@ -473,11 +474,11 @@ This last step involves moving the transformed data to a target data warehouse. 
     * <table><tr><td align="center"  width="80%"><img src="Images/Load_Process_Images/Qry1.jpg"></tr></td></table>   
 * Latest Covid19 numbers for the  of California per county      
     * <table><tr><td align="center"  width="80%"><img src="Images/Load_Process_Images/Qry2.jpg"></tr></td></table>     
-* Total Coronavirus Deaths in USA
+* Total Coronavirus Deaths in USA 
     * <table><tr><td align="center"  width="60%"><img src="Images/outputDF.jpg"></tr></td></table>   
     * <table><tr><td align="center"  width="80%"><img src="Images/outputP.jpg"></tr></td></table>   
 
-
+#### The New York Times. (2021). Coronavirus (Covid-19) Data in the United States. Retrieved [08/09/2021], from https://github.com/nytimes/covid-19-data
 
 
 
