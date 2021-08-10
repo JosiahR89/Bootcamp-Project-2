@@ -10,7 +10,7 @@
     * [Transformed Data](/Resources/Transformed_Data)
     * [Bonus Read FromDB Examples](/Resources/Bonus_ReadFromDBExamples)
 * [Jupyter Notebook  'ETl_Code.ipynb']('ETl_Code.ipynb') has all the cleaning code 
-* [Group Project Detailed Report]('Group-Project-2-Detailed-Report.docx')
+* [Group Project Detailed Report'Group-Project-2-Detailed-Report.docx']('Group-Project-2-Detailed-Report.docx')
 
 ## Project Description 
 In 2020-2021, the most important global issue has been the COVID19 pandemic. Health professionals and researchers around the world have been working hard to make available, the data related to cases, testing, and mortality. We are utilizing publically available Covid19 data for our ETL project. 
